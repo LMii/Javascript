@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//数组转换成字符串
+          var result=zhuan([1,2,3,4,5],'-')
+          console.log(result);
+          function zhuan(arr9,str){
+          	var arr9;
+          	var newarr9='';    
+          	//最终为字符串，所以刚开始为空字符，如果不写将会变成undefined+以后的值
+            for(var i=0;i<arr9.length;i++){
+            	if(i!=arr9.length-1){
+            		newarr9+=arr9[i]+str;
+            	}
+            	else{
+            		newarr9+=arr9[i];
+            	}
+            }
+            return newarr9;
+          }
+
+          //把数组里面符合条件(偶数)的筛选出来 filter
+          var result1=filter([1,2,8,5,90,64]);
+          console.log(result1);
+          function filter(arr10){
+          	var arr10;
+          	var newarr10=[];
+          	for(var i=0;i<arr10.length;i++){
+          		if(arr10[i]%2==0){
+          			newarr10[newarr10.length]=arr10[i]
+          		}
+          	}
+          	return newarr10;
+          }
+
+
+         /* //作用域
+          function*/
+
+          //多个return  把函数当作参数
+          var result2=math(1,2,aa)
+          console.log(result2);
+          function math(num1,num2,fn){
+          	return fn(num1,num2)
+          }
+          function aa(num1,num2){
+          	return num1+num2;
+          }
+          function bb(num1,num2){
+          	return num1*num2;
+          }
+          function cc(num1,num2){
+          	return num1/num2;
+          }
+            
+
+           //数组里面的值进行随意变化  映射
+           var arr=[1,2,3,4,5]
+           var result=map(arr,function(value){
+           	   return value%2==0;
+           });
+           console.log(result);
+           function map(arr,fn){
+           	  var arr;
+           	  var newarr=[];
+           	  for(i=0;i<arr.length;i++){
+           	  	if(fn(arr[i])==true){
+           	  	    newarr[newarr.length]=arr[i]
+           	  	}
+           	  }
+           	  return newarr;
+           }
+           
+
+
+           //将数组的每个值*2   映射
+           var arr=[1,2,3,4,5]
+           var result1=map1(arr,function m1(value1){
+           	   return value1*2;
+           });
+           console.log(result1);
+           function map1(arr,m1){
+           	  var arr;
+           	  var newarr1=[];
+           	  for(var i=0;i<arr.length;i++){           	  	
+           	  	    newarr1[newarr1.length]=m1(arr[i])
+           	  	
+           	  }
+           	  return newarr1;
+           }
+
+           
+	</script>
+</body>
+</html>
